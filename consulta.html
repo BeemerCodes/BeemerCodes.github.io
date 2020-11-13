@@ -16,11 +16,11 @@
 
     <script src="app.js"></script>
 
-    <link rel="shortcut icon" href="dinheiro.svg">
+    <link rel="shortcut icon" href="dinheiro.svg" type="image/x-icon">
 
 	</head>
 
-  <body>
+  <body onload="carregaListaDespesas()">
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
@@ -34,10 +34,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="index.html">Cadastro</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="consulta.html">Consulta</a>
             </li>
           </ul>
@@ -47,9 +47,9 @@
     </nav>
 
     <div class="container">
-      <div class="row">
-        <div class="col mb-5">
-          <h1 class="display-4">Registro de nova despesa</h1>
+      <div class="row mb-5">
+        <div class="col">
+          <h1 class="display-4">Consulta de despesas</h1>
         </div>
       </div>
 
@@ -95,7 +95,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row  mb-5">
         <div class="col-md-8">
           <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
         </div>
@@ -105,31 +105,32 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary" onclick="cadastrarDespesa()">
-            <i class="fas fa-plus"></i>
+          <button type="button" class="btn btn-primary" onclick="pesquisarDespesa()">
+            <i class="fas fa-search"></i>
           </button>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div id="modal_titulo_div">
-            <h5 class="modal-title" id="modal_titulo"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="modal_conteudo"></div>
-          <div class="modal-footer">
-            <button type="button" data-dismiss="modal" id="modal_btn">Voltar</button>
-          </div>
+      <div class="row">
+        <div class="col">
+          <table class="table" >
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id="listaDespesas">
+               
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-
   </body>	
 
 </html>

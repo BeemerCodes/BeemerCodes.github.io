@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-//beemercodes.github.io/expert-notes/
+//https://beemercodes.github.io/expert-notes/index.html
 export default defineConfig({
   plugins: [react()],
 });
